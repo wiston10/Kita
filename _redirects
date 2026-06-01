@@ -1,0 +1,8 @@
+/index-two-page.html   /index.html   301
+/index-two-page        /index.html   301
+/about                 /about.html   200
+/contact               /contact.html 200
+/pricing               /pricing.html 200
+/programs              /programs.html 200
+/team                  /team.html    200
+/*                     /404.html     404
