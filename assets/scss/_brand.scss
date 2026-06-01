@@ -1,0 +1,268 @@
+.brand-wrapper {
+   margin-top: -5px;
+    h6 {
+        font-size: 22px;
+        position: relative;
+        margin-bottom: 50px;
+        color: $header-color;
+        font-weight: 700;
+
+        &::before {
+            position: absolute;
+            top: 15px;
+            left: 35px;
+            content: "";
+            height: 1px;
+            width: 480px;
+            background-color: $theme-color;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            content: "";
+            height: 1px;
+            width: 480px;
+            background-color: $theme-color;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+    .brand-image {
+        text-align: center;
+        filter: grayscale(100%);
+        @include transition;
+        opacity: .4;
+
+        &:hover {
+            filter: initial;
+            opacity: 1;
+        }
+    }
+
+    .swiper-slide.swiper-slide-active{
+        .brand-image {
+            filter: initial;
+            opacity: 1;
+        }
+    }
+}
+
+.brand-box-1 {
+    height: 125px;
+    line-height: 125px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+
+    .brand-img-1 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+        transition: all 0.6s ease; // smooth animation
+        transform: translateY(0);
+        }
+
+        &:last-child img {
+        transform: translateY(-350%);
+        opacity: 0;
+        }
+    }
+
+    &:hover {
+        .brand-img-1:first-child img {
+        transform: translateY(100%);
+        opacity: 0;
+        }
+
+        .brand-img-1:last-child img {
+        transform: translateY(0);
+        opacity: 1;
+        }
+    }
+
+    &.style-border-5 {
+        border: 1px solid #F0ECDF;
+        border-radius: 0;
+    }
+}
+
+.brand-section-5 {
+    p {
+        margin-bottom: 50px;
+        position: relative;
+        font-size: 20px;
+        color: $header-color;
+        font-family: $heading-font;
+        background-color: $white;
+        position: relative;
+        font-weight: 700;
+        text-transform: capitalize;
+
+          &::before {
+            position: absolute;
+            top: 15px;
+            left: 15%;
+            content: "";
+            height: 1px;
+            width: 350px;
+             background-color:rgba(92, 112, 126, .20);
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: 15px;
+            right: 15%;
+            content: "";
+            height: 1px;
+            width: 350px;
+            background-color:rgba(92, 112, 126, .20);
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+
+    &.style-2 {
+        p {
+            background-color: #FFFBFB;
+        }
+    }
+}
+
+.instagram-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 100px;
+    max-width: 400px;
+
+    .icon {
+        color: $theme-color;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 4px 40px rgba(56, 84, 105, 0.2);
+        border-radius: 100px;
+        display: inline-block;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: inline-block;
+         padding: 15px 22px;
+        border-radius: 100px;
+        max-width: 230px;
+        margin: 0 auto;
+        text-transform: capitalize;
+        z-index: 11;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: $heading-font;
+        @include transition;
+        opacity: 0;
+        visibility: hidden;
+
+        i {
+            margin-right: 7px;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white;
+        }
+    }
+
+    img {
+        border-radius: 100px;
+        display: block;
+        object-fit: cover;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        @include imgw;
+
+        &:first-child{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            -webkit-transform: translateX(50%) scaleX(2);
+            transform: translate(50%) scaleX(2);
+            opacity: 0;
+            -webkit-filter: blur(10px);
+            filter: blur(10px)
+        }
+    }
+
+    &:hover {
+        img {
+            &:first-child {
+                -webkit-transform: translateX(0) scaleX(1);
+                transform: translate(0) scaleX(1);
+                opacity: 1;
+                -webkit-filter: blur(0);
+                filter: blur(0)
+            }
+
+            &:nth-child(2){
+                -webkit-transform: translateX(-50%) scaleX(2);
+                transform: translateX(-50%) scaleX(2);
+                opacity: 0;
+                -webkit-filter: blur(10px);
+                filter: blur(10px);
+            }
+        } 
+
+        .icon {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.instagram-wrapper-5 {
+    overflow: hidden;
+    width: 100%;
+
+    .instagram-section-5 {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        animation: instagramMarquee 45s linear infinite;
+    }
+}
+
+
+@keyframes instagramMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

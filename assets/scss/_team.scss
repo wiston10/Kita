@@ -1,0 +1,1200 @@
+.team-section {
+    position: relative;
+
+    .top-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .love-shape {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+
+        @include breakpoint (max-xxl){
+            left: 30px;
+        }
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .frame-shape {
+        position: absolute;
+        top: 45%;
+        right: 0;
+        animation: rounded 5s linear infinite;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
+
+.team-items {
+    margin-top: 30px;
+
+    .team-image {
+        position: relative;
+
+        img {
+            @include imgw;
+            border-radius: 12px;
+        }
+
+        .shape-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .social-profile {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            content: "";
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            z-index: 2;
+            display: inline-block;
+            overflow: hidden;
+            z-index: 99;
+
+            ul {
+                transform: translateY(-100px);
+                transition: all 0.6s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 43px;
+                        text-align: center;
+                        font-size: 18px;
+                        display: block;
+                        background: $white;
+                        color: $theme-color;
+                        -webkit-transition: all .4s ease-in-out;
+                        transition: all .4s ease-in-out;
+                        text-align: center;
+                        margin: 0 auto;
+                        border-radius: 50%;
+
+                        &:hover {
+                            background-color: $theme-color;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .plus-btn {
+                z-index: 2;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 18px;
+                display: inline-block;
+                background: transparent;
+                border: 1px solid $white;
+                color: $white;
+                @include transition;
+                border-radius: 50%;
+                margin-bottom: 10px;
+
+                &:hover {
+                    background-color: $white;
+                    color: $theme-color;
+                }
+            }
+
+            &:hover {
+                ul {
+                    transform: translateY(0);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .team-content {
+        margin-top: 20px;
+        text-align: center;
+
+        h3 {
+            margin-bottom: 5px;
+
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+.team-box-items {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+
+    .bg-shape-1 {
+        position: absolute;
+        top: 29%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &::before {
+        @include before;
+        background-color: $white;
+        border-radius: 24px;
+        z-index: -1;
+        top: 35%;
+        height: initial;
+    }
+
+    .team-image {
+        margin: 0 auto;
+        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294 294"> <path fill-rule="evenodd" clip-rule="evenodd" d="M147.403 0.00569915C182.119 0.435189 209.656 26.2366 235.076 51.2011C261.845 77.4906 291.257 105.251 293.775 143.756C296.413 184.105 275.546 221.843 248.076 250.036C221.009 277.816 185.15 293.448 147.403 293.984C109.12 294.528 71.5048 281.034 43.9843 252.934C16.0177 224.38 -2.47629 184.728 0.269486 143.756C2.87462 104.884 30.5587 75.4755 57.651 49.0061C83.3487 23.8993 112.392 -0.427445 147.403 0.00569915Z" /></svg>');
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        mask-size: cover;
+        position: relative;
+        z-index: 9;
+        max-width: 295px;
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .team-content {
+        padding: 20px  50px;
+
+        h3 {
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+
+        .social-icon {
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid $border-color;
+            padding-top: 20px;
+
+            a {
+                color: $text-color;
+                font-size: 20px;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+.team-section-2 {
+    position: relative;
+    margin-top: 30px;
+
+    .top-shape {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        height: 92px;
+
+        img {
+            @include imgw;
+            object-fit: cover;
+        }
+    }
+
+    .love-shape {
+        position: absolute;
+        bottom: 10%;
+        left: 30px;
+
+        @include breakpoint (max-xxl){
+            left: 30px;
+        }
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .frame-shape {
+        position: absolute;
+        top: 40%;
+        right: 0;
+        animation: rounded 5s linear infinite;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
+
+.team-section-3 {
+    position: relative;
+
+    .tree-shape {
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+    }
+
+    .right-shape {
+        position: absolute;
+        right: 0;
+        top: 10%;
+    }
+
+    .bee-shape {
+        position: absolute;
+        right: 5%;
+        top: 15%;
+        transform: translateY(-50%);
+    }
+}
+
+.team-section-4 {
+    margin-bottom: -5px;
+}
+
+.team-details-wrapper {
+    .team-author-items {
+        @include flex;
+        gap: 30px;
+        padding: 30px;
+        border: 1px solid $border-color;
+        border-radius: 12px;
+
+        @include breakpoint (max-xl){
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .thumb {
+            max-width: 370px;
+
+            img {
+                @include imgw;
+                border-radius: 10px;
+            }
+        }
+
+        .content {
+            max-width: 700px;
+
+            h2 {
+                font-size: 30px;
+                margin-bottom: 5px;
+
+                @include breakpoint (max-sm){
+                    font-size: 26px;
+                }
+            }
+
+            span {
+                margin-bottom: 20px;
+                display: inline-block;
+
+                @include breakpoint (max-sm){
+                    margin-bottom: 10px;
+                }
+            }
+
+            ul {
+                margin-top: 20px;
+                @include flex;
+                gap: 50px;
+                border-top: 1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+                padding: 20px 0;
+
+                @include breakpoint (max-xl){
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    justify-content: center;
+                }
+
+                li {
+                    color: $header-color;
+
+                    i {
+                        margin-right: 5px;
+                    }
+
+                    .color-star {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            .social-icon {
+                margin-top: 40px;
+                gap: 15px;
+                position: relative;
+                z-index: 9;
+                
+                @include breakpoint (max-xl){
+                    justify-content: center;
+                    margin-top: 30px;
+                }
+
+                @include breakpoint (max-sm){
+                    margin-top: 20px;
+                }
+
+            a {
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                font-size: 16px;
+                display: block;
+                color: $theme-color;
+                transition: all .4s ease-in-out;
+                text-align: center;
+                background-color: transparent;
+                border: 1px solid $theme-color;
+
+                    &:hover {
+                        background-color: $theme-color;
+                        color: $white;
+                        border: 1px solid transparent
+                    }
+                }
+            }
+        }
+    }
+
+    .details-info-items {
+        padding: 80px 0;
+        border-bottom: 1px solid $border-color;
+
+        @include breakpoint (max-md){
+            padding: 50px 0;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 40px 0;
+        }
+
+        .info-content {
+            h2 {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .progress-wrap {
+            margin-left: 30px;
+
+            @include breakpoint (max-lg){
+                margin-left: 0;
+            }
+
+            .pro-items {
+                width: 100%;
+
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                }
+                .pro-head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    .title {
+                        font-size: 16px;
+                        color: $header-color;
+                    }
+                    
+                    .point {
+                        font-size: 16px;
+                        color: $header-color;
+                    }
+                }
+                .progress {
+                    background: $bg-color-2;
+                    justify-content: flex-start;
+                    border-radius: 100px;
+                    align-items: center;
+                    position: relative;
+                    display: flex;
+                    height: 8px;
+                    width: 100%;
+                }
+                
+                .progress-value {
+                    animation: load 3s normal forwards;
+                    border-radius: 0;
+                    background: $theme-color;
+                    height: 8px;
+                    width: 0;
+                }
+                .style-two{
+                    animation: load2 3s normal forwards;
+                }
+                .style-three{
+                    animation: load3 3s normal forwards;
+                }
+                @keyframes load {
+                    0% { width: 0; }
+                    100% { width: 90%; }
+                }
+                @keyframes load2 {
+                    0% { width: 0; }
+                    100% { width: 70%; }
+                }
+                @keyframes load3 {
+                    0% { width: 0; }
+                    100% { width: 55%; }
+                }
+            }
+        }
+    }
+}
+
+.team-single-items-5 {
+    position: relative;
+    z-index: 9;
+    margin-top: 30px;
+    text-align: center;
+
+    @include breakpoint (max-lg){
+        max-width: 450px;
+    }
+
+    img {
+        @include imgw;
+    }
+
+    .bg-shape {
+        position: relative;
+
+        .items {
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           left: 0;
+           right: 0;
+           text-align: center;
+           padding: 30px;
+        }
+    }
+
+    .thumb {
+        max-width: 362px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 9;
+        overflow: hidden;
+
+        .social-icon {
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -100px;
+            @include transition;
+            opacity: 0;
+            visibility: hidden;
+            gap: 10px;
+
+            a {
+                width: 44px;
+                height: 44px;
+                display: inline-block;
+                line-height: 44px;
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                color: $white;
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white;
+                }
+            }
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 15px;
+
+        h3 {
+            @include breakpoint (max-xxl){
+                font-size: 20px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 19px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 18px;
+            }
+              a {
+                  background-position: 0 95%;
+                  background-repeat: no-repeat;
+                  background-size: 0% 2px;
+                  display: inline;
+
+                  &:hover {
+                      color: $theme-color;
+                      background-size: 100% 2px;
+                      background-image: linear-gradient(180deg, $theme-color 0%, $theme-color 100%);
+                  }
+              }
+        }
+    }
+
+    &:hover {
+        .thumb {
+            .social-icon {
+                opacity: 1;
+                visibility: visible;
+                bottom: 20px;
+            }
+        }
+    }
+}
+
+.team-slider-5 {
+    margin-right: -35%;
+
+    @include breakpoint (max-xl4){
+        margin-right: -25%;
+    }
+
+     @include breakpoint (max-xxxl){
+        margin-right: -15%;
+    }
+
+    @include breakpoint (max-xxl){
+        margin-right: -30%;
+    }
+
+    @include breakpoint (max-lg){
+        margin-right: 0;
+    }
+}
+
+.team-section-5 {
+    position: relative;
+
+    .pencil-shape {
+        position: absolute;
+        left: 0;
+        bottom: 180px;
+
+        @include breakpoint (max-xxl){
+            opacity: .3;
+        }
+    }
+
+    .vec-shape {
+        position: absolute;
+        right: 200px;
+        top: 110px;
+        animation: rounded 5s linear infinite;
+
+        @include breakpoint (max-xxl){
+            opacity: .3;
+        }
+    }
+
+    .vec-shape2 {
+        position: absolute;
+        right: 90px;
+        bottom: 0;
+
+        @include breakpoint (max-xxl){
+            opacity: .3;
+        }
+    }
+}
+
+.team-wrapper-6 {
+    @include flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: -30px;
+
+    @include breakpoint (max-xxl){
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        margin-top: 0;
+    }
+
+    @include breakpoint (max-lg){
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+    }
+
+    @include breakpoint (max-md){
+        margin-top: 30px;
+    }
+
+    .team-items {
+        position: relative;
+          .team-shape {
+            position: absolute;
+            bottom: 70px;
+            left: -70px;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+
+    .team-main-items {
+        margin-top: 30px;
+        height: 512px;
+        width: 246px;
+        position: relative;
+        transition: width 0.5s ease;
+
+        @include breakpoint (max-xxl){
+            width: initial !important;
+            margin-top: 0;
+        }
+
+        &.bg-2 {
+            .team-items {
+                background-color: #532822;
+              
+            }
+
+            .team-hover-items {
+                background-color: #532822;
+
+                 .team-image {
+                    margin-top: -160px;
+                }
+
+                .team-shape {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .star {
+                    position: absolute;
+                    top: 50px;
+                    right: 45px;
+                    z-index: -1;
+
+                    @include breakpoint (max-xxl){
+                        display: none;
+                    }
+                }
+
+                .star-2 {
+                    position: absolute;
+                    top: 47%;
+                    right: 70px;
+                    z-index: -1;
+
+                    @include breakpoint (max-xxl){
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.bg-3 {
+            .team-items {
+                background-color: #43A574;
+            }
+
+            .team-hover-items {
+                background-color: #43A574;
+
+                .content {
+                    position: relative;
+                }
+
+                 .team-image {
+                    margin-top: -160px;
+                }
+
+                .shape-3 {
+                    position: absolute;
+                    top: 50px;
+                    right: 45px;
+                    z-index: -1;
+
+                    @include breakpoint (max-xxl){
+                        display: none;
+                    }
+                }
+
+                .shape-4 {
+                    position: absolute;
+                    top: 47%;
+                    right: 70px;
+                    z-index: -1;
+
+                    @include breakpoint (max-xxl){
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.bg-4 {
+            .team-items {
+                background-color: #FFD25A;
+
+                .content {
+                    .title {
+                        a {
+                            color: $header-color
+                        }
+                    }
+                }
+            }
+
+            .team-hover-items {
+                background-color: #FFD25A;
+
+                .content {
+                    .title {
+                        a {
+                            color: $header-color
+                        }
+                    }
+                }
+
+                .team-image {
+                    margin-top: -210px;
+                }
+
+                 .shape-5 {
+                        position: absolute;
+                        top: 6%;
+                        right: 122px;
+                        z-index: -1;
+
+                    @include breakpoint (max-xxl){
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .team-items {
+            background-color: #FF854B;
+            border-radius: 48px;
+            overflow: hidden;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            height: 512px;
+
+             @include breakpoint (max-xxl){
+                opacity: 0;
+                transform: scale(0.95);
+                pointer-events: none;
+            }
+
+            .star {
+                position: absolute;
+                top: 73px;
+                left: 8px;
+            }
+
+            .star2 {
+                position: absolute;
+                top: 150px;
+                right: 16px;
+            }
+
+            .content {
+                padding: 45px 30px;
+                position: relative;
+                z-index: 1;
+
+                .title {
+                    font-size: 30px;
+                    font-weight: 700;
+                    text-align: center;
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+
+            .team-image {
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .shape-3 {
+                position: absolute;
+                top: 25px;
+                right: 10px;
+            }
+
+            .shape-4 {
+                position: absolute;
+                left: 15px;
+                top: 58%;
+            }
+
+            .shape-5 {
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                top: 47%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .team-hover-items {
+            width: 530px;
+            height: 512px;
+            background-color: #FF854B;
+            border-radius: 48px;
+            overflow: hidden;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.96);
+            transition: all 0.45s ease;
+
+            @include breakpoint (max-xxl){
+                width: 100% !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: scale(1) !important;
+            }
+
+            .team-shape {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            .content {
+                padding: 40px;
+
+                @include breakpoint (max-sm){
+                    padding: 28px;
+                }
+
+                .title {
+                    font-size: 50px;
+                    font-weight: 700;
+                    line-height: 1;
+
+                    @include breakpoint (max-xxl){
+                        font-size: 35px;
+                    }
+
+                    @include breakpoint (max-sm){
+                        font-size: 28px;
+                    }
+
+                    a {
+                        color: $white;
+                    }
+                }
+
+                span {
+                    display: inline-block;
+                    font-size: 20px;
+                    font-weight: 600;
+                    background: $white;
+                    color: #FF854B;
+                    border-radius: 32px;
+                    padding: 8px 18px;
+                    margin-top: 18px;
+                }
+            }
+
+            .team-image {
+                text-align: right;
+                margin-top: -100px;
+            }
+        }
+
+        &.active {
+            width: 530px;
+            height: 440px;
+
+            @include breakpoint (max-xxl){
+                height: 512px;
+            }
+
+            .team-items {
+                opacity: 0;
+                transform: scale(0.95);
+                pointer-events: none;
+            }
+
+            .team-hover-items {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.team-section-6 {
+    position: relative;
+
+    .pencil {
+        position: absolute;
+        bottom: 40%;
+        left: 0;
+    }
+
+    .link-btn {
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: $heading-font;
+        color: $theme-color;
+        @include transition;
+
+        svg {
+            margin-left: 5px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.team-box-items-7 {
+    margin-top: 30px;
+    max-width: 450px;
+    position: relative;
+
+    @include breakpoint (max-md){
+       max-width: initial;
+    }
+
+    .shape {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        text-align: center;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+
+    .thumb {
+        max-width: 623px;
+        position: relative;
+        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 428"><path fill-rule="evenodd" clip-rule="evenodd" d="M144.027 0.374827C144.377 0.369479 144.727 0.361989 145.077 0.350223C147.347 0.104203 149.619 -0.31831 151.884 0.395148C152.354 0.443282 152.817 0.524577 153.279 0.616567C158.878 0.371616 164.315 1.49475 169.597 3.06821C172.691 3.99025 175.722 4.03089 178.83 4.06833C180.978 4.10791 183.151 3.84477 185.239 4.60423C186.292 4.59567 187.343 4.58819 188.396 4.57963C190.034 4.02234 191.195 5.35192 192.618 5.64928C192.97 6.39162 193.324 6.40873 193.68 5.65356C199.36 6.02793 204.876 3.82231 210.58 4.58177C211.267 5.22463 212.159 5.54124 212.935 6.04612C218.634 7.8688 224.393 6.28572 230.068 6.08783C239.311 5.76587 248.538 4.85345 257.802 5.2749C259.705 5.36154 260.984 3.85333 262.751 3.73781C263.243 3.73353 263.722 3.81803 264.183 3.98811C266.189 6.39162 268.626 4.03624 270.802 4.57748C271.5 4.57641 272.199 4.57534 272.896 4.57428C275.538 4.63311 278.218 4.54861 280.741 5.43214C282.262 5.96482 283.408 5.58082 284.529 4.6406C285.934 4.62776 287.34 4.61492 288.745 4.60209C289.911 4.61599 290.994 4.89196 291.926 5.62895L291.931 5.63216C300.424 4.92191 308.845 5.92738 317.276 6.70074C319.037 6.70074 320.797 6.70074 322.559 6.69967C326.262 6.89221 329.949 6.9949 333.161 4.64808C333.49 4.65022 333.818 4.65022 334.146 4.64915C335.353 4.64915 336.304 5.42037 337.411 5.72201C353.33 3.9389 369.096 6.90826 384.947 7.17995C387.117 6.49965 389.164 7.19599 391.225 7.7351C391.573 7.75328 391.919 7.76077 392.267 7.75649C395.972 9.46579 400.212 8.23569 403.929 9.87761C406.74 10.5697 409.552 11.2628 412.363 11.9549C414.344 11.3184 413.987 14.1177 415.537 14.1145C415.884 14.1241 416.231 14.1209 416.577 14.1059C417.83 14.2429 418.192 15.2933 418.709 16.1853L418.711 16.1928C420.318 16.6988 421.377 17.7492 421.864 19.3676V19.3718C423.731 22.1241 426.983 24.0131 427.141 27.8307C426.952 29.4629 428.549 29.8994 429.228 30.9508C428.584 32.9393 429.682 34.5834 430.29 36.3237C430.643 36.6638 430.996 37.004 431.348 37.3431C432.307 38.187 433.554 38.6095 434.5 39.4738C434.871 40.521 435.241 41.5682 435.613 42.6154C435.394 44.3771 436.354 46.1313 435.648 47.8963C435.998 49.3082 436.346 50.7212 436.696 52.1331C438.106 53.6103 437.994 55.6822 438.762 57.4108C438.771 58.4676 438.782 59.5234 438.793 60.5791C440.322 62.5056 438.764 64.9283 439.813 66.9328C439.802 67.2783 439.808 67.6238 439.828 67.9683C440.352 69.8958 439.454 71.5495 438.81 73.2523C438.596 74.7702 439.034 76.134 439.794 77.4218C438.538 79.2595 440.152 80.3794 440.869 81.724C440.871 82.4203 440.872 83.1156 440.874 83.8119C442.242 86.0935 442.297 88.7484 442.981 91.2236L442.971 91.2204C444.079 94.3833 444.139 97.5484 442.979 100.714L442.981 100.708C442.282 101.653 443.145 103.1 441.958 103.888C441.921 104.223 441.902 104.559 441.899 104.896C441.352 107.111 441.638 109.232 442.746 111.208C443.933 113.326 443.466 115.466 442.985 117.625C442.986 119.031 442.986 120.438 442.986 121.844C444.414 128.816 445.886 135.783 445.104 142.977C445.082 143.319 445.078 143.661 445.091 144.003C443.659 148.507 445.352 153.253 444.02 157.763C443.286 158.102 443.249 158.457 443.995 158.83C443.319 160.124 443.315 161.444 443.854 162.785C443.894 164.015 443.281 165.073 442.958 166.209C442.971 166.915 442.985 167.621 442.997 168.327C443.664 169.622 443.952 171.046 442.921 172.158C441.193 174.024 442.993 175.219 443.538 176.666C443.66 177.148 443.699 177.635 443.666 178.13C444.128 186.392 443.687 194.665 445.973 202.853C447.058 206.742 445.817 211.221 447.536 215.236C447.928 216.15 447.413 216.904 446.799 217.594C445.7 218.832 445.712 219.313 446.776 219.983C448.181 221.937 447.208 224.433 448.257 226.468C447.208 233.857 448.038 241.241 448.307 248.627C449.426 251.439 448.938 254.249 448.303 257.06C448.293 257.768 448.283 258.476 448.273 259.185C450.665 264.107 449.552 269.041 448.324 273.977C448.325 276.44 448.326 278.904 448.329 281.367C450.778 286.387 449.879 291.704 449.65 296.948C449.599 298.094 448.686 299.176 449.315 300.408C449.302 300.738 449.3 301.069 449.309 301.399C448.616 303.83 448.522 306.344 448.274 308.837C448.271 320.098 448.268 331.36 448.263 342.622C445.534 345.63 445.291 349.629 444.037 353.226C444.035 353.914 444.033 354.601 444.032 355.289C442.957 357.234 444.317 359.338 443.609 361.338C442.881 363.395 443.254 366.41 439.51 365.492C439.188 365.413 439.465 365.829 439.516 365.923C440.904 368.536 440.276 370.944 438.802 373.273C439.028 375.819 438.32 378.226 437.696 380.646C436.849 381.914 436 383.18 434.54 383.842C433.82 385.245 432.503 386.043 431.346 387.003C429.854 388.848 429.263 390.992 429.248 393.327C428.413 394.297 428.198 395.666 427.188 396.523C427.153 396.854 427.136 397.188 427.137 397.522C425.316 397.438 424.091 398.516 422.915 399.689C421.872 401.729 418.089 401.543 418.678 404.908C417.599 405.27 416.879 405.986 416.535 407.076C415.85 407.44 415.163 407.805 414.477 408.17C413.069 408.892 411.596 409.48 410.197 410.222C409.154 410.241 408.112 410.259 407.069 410.278C403.099 412.357 398.471 411.776 394.395 413.422C393.13 415.362 390.895 414.878 389.118 415.54L389.115 415.541C387.885 416.628 386.141 415.628 384.88 416.585H384.888C382.797 417.384 380.471 417.468 378.523 418.694C378.189 418.671 377.855 418.657 377.52 418.654C376.038 418.824 374.549 418.966 373.22 419.737L372.716 419.728L372.212 419.733C367.711 420.934 363.118 421.551 358.48 421.883C357.422 421.884 356.363 421.886 355.305 421.888C353.9 421.945 352.494 422.824 351.089 421.89C350.04 421.881 348.992 421.872 347.944 421.863C346.165 419.962 344.409 422.526 342.636 421.889C342.282 421.886 341.928 421.883 341.574 421.88C340.165 422.828 338.758 421.951 337.35 421.879C336.651 421.87 335.95 421.86 335.25 421.852C333.839 422.395 332.425 422.393 331.009 421.872C330.306 421.874 329.603 421.875 328.9 421.878C326.777 422.918 324.664 421.884 322.546 421.843C321.021 422.02 319.655 421.511 318.323 420.857C317.057 421.822 315.406 421.148 314.079 421.853C312.681 421.86 311.283 421.868 309.885 421.875C304.252 422.569 298.587 423.001 292.989 423.969C292.538 423.101 291.744 422.933 290.869 422.929C288.411 424.19 285.95 424.992 283.474 422.969C281.363 422.601 279.254 422.233 277.144 421.864C273.264 420.761 269.384 421.47 265.505 421.863L265.508 421.862C262.929 424.035 259.805 421.944 257.075 422.94L257.069 422.948C254.602 423.295 252.135 423.655 249.664 423.979C245.806 424.501 241.752 422.796 238.044 425.006C235.184 425.619 231.988 424.874 229.535 427.12C228.866 427.126 228.197 427.133 227.53 427.139C226.581 426.175 225.476 426.251 224.184 426.282C219.542 426.394 214.948 426.403 210.65 423.899C207.396 422.004 203.736 422.186 200.045 423.041C195.478 424.101 190.847 423.542 186.254 422.913L185.753 422.908L185.252 422.92C182.497 422.029 179.42 423.85 176.788 421.918C173.967 422.274 171.146 422.63 168.326 422.986C167.613 423.563 166.907 423.562 166.208 422.963C165.506 422.945 164.805 422.927 164.102 422.91C163.099 423.447 161.839 423.215 160.913 423.977L160.922 423.968C153.526 425.803 146.127 422.324 138.732 423.975L138.74 423.974C137.314 424.916 135.82 424.459 134.335 424.2C127.739 422.217 121.11 423.866 114.492 424.045C112.12 425.15 110.058 424.43 108.118 422.974C107.761 422.969 107.404 422.963 107.047 422.958C101.959 424.726 97.1201 423.131 92.2575 421.862C83.8158 420.806 75.3741 419.751 66.9335 418.695C63.2721 417.21 59.6 415.743 56.3407 413.445C55.6497 413.434 54.9576 413.421 54.2666 413.409C53.3467 412.476 52.291 411.749 51.0577 411.292C49.9057 411.232 48.6542 411.477 47.8777 410.26C44.1724 408.48 41.2254 405.733 38.3973 402.832C37.9726 401.975 37.1982 401.792 36.3414 401.767C32.6971 399.101 31.9719 394.353 28.8731 391.298C28.1682 390.574 27.4633 389.849 26.7595 389.125C25.6438 387.391 24.6052 385.611 23.6286 383.797C21.1342 382.421 20.6881 379.993 20.3854 377.49C15.4928 370.65 16.386 361.873 12.7439 354.606C12.3652 353.851 12.3909 352.913 13.0145 352.154C13.0123 351.448 13.0113 350.742 13.0091 350.037C11.4923 348.183 11.9619 345.684 10.9372 343.67C10.9415 340.512 10.9458 337.355 10.95 334.197C10.2141 332.781 10.904 331.369 10.9596 329.955C10.9468 329.605 10.9308 329.254 10.9105 328.904C8.67384 319.816 9.429 310.618 9.90286 301.43C9.90286 301.082 9.89107 300.733 9.86754 300.385C9.28458 294.299 7.37631 288.444 6.7174 282.37C6.73131 282.056 6.73241 281.741 6.72171 281.428C7.68868 280.552 7.78923 279.405 7.72719 278.208C7.72398 277.853 7.72076 277.498 7.71648 277.144C6.33449 272.309 7.23405 267.155 5.6392 262.35H5.64135C4.93538 256.359 5.01238 250.275 3.53626 244.375L3.54377 244.389C2.51048 242.612 6.03391 240.839 3.54697 239.061C2.66022 236.968 3.64004 234.87 3.53521 232.776C2.71372 231.37 2.63563 229.961 3.51595 228.548C3.5074 228.196 3.4999 227.843 3.49134 227.491C2.10614 225.171 1.66973 222.719 2.47731 220.097L2.47627 220.101C1.33067 213.805 0.759494 207.477 1.42268 201.081L1.42052 201.086C2.05162 199.673 1.13383 198.27 1.39376 196.859C1.39483 196.504 1.39589 196.15 1.39695 195.795C0.45887 194.153 0.855722 192.247 0.351916 190.519C-0.864278 188.95 1.46863 188.539 1.3884 187.34C-0.00856316 180.368 -0.288806 173.406 0.33801 166.27C0.893159 159.947 0.518826 153.533 1.41413 147.201C1.71363 145.428 0.737005 143.401 2.46556 141.912C3.26352 136.617 3.15871 131.25 3.3705 125.933C3.58657 120.5 5.82427 115.816 7.30145 110.837C7.96678 110.464 9.78944 110.904 9.29419 110.08C7.87797 107.725 9.83334 105.268 8.60431 103.065C8.46526 102.595 8.47703 102.133 8.65138 101.676C9.4825 100.094 9.88358 98.4747 9.76164 96.6306C9.37336 90.7732 12.117 85.0624 9.70177 78.9664C8.04595 74.7884 12.0743 70.4124 10.9522 65.8429C10.9415 65.4952 10.9383 65.1476 10.9415 64.8C12.3417 61.7375 11.6892 58.2901 12.7449 55.1613C12.6358 54.3302 15.3655 56.0534 13.9568 53.2809C12.2133 49.8494 13.4017 45.773 15.6651 42.3822C16.8267 40.6429 18.3242 39.1486 19.3468 37.3088C19.6923 36.9526 20.0378 36.5964 20.3844 36.2413C21.807 31.5969 25.7829 29.0073 28.8689 25.701C29.2208 25.348 29.5727 24.995 29.9235 24.642C33.1571 23.552 36.3404 22.3808 38.4091 19.4039L38.3845 19.3665C41.5795 15.6163 46.5448 14.3006 50.0073 10.9184C53.6067 8.75127 57.958 10.7515 61.6002 8.82614C63.0603 9.63801 63.8689 8.49883 64.8102 7.75435C66.2146 7.75221 67.6191 7.75007 69.0236 7.74794C70.8441 4.77109 74.1954 7.1885 76.4235 5.64713C76.7754 5.65141 77.1273 5.63965 77.4781 5.61184C78.2836 5.47706 78.8162 4.78285 79.5874 4.57855C79.9415 4.57427 80.2945 4.56893 80.6485 4.56465C82.7226 3.99453 84.5934 2.18039 86.982 3.52281C87.3317 3.52174 87.6816 3.51853 88.0313 3.51532C89.7952 5.51557 91.5601 2.58686 93.324 3.51746C95.7157 4.80318 98.1513 4.70692 100.613 3.73567C101.065 3.57843 101.528 3.47254 102 3.39659C108.851 2.96552 115.599 1.49475 122.481 1.38992C122.97 1.35035 123.458 1.3696 123.946 1.41881C130.652 1.32468 137.285 -0.21669 144.027 0.374827Z" /></svg>');
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        mask-size: cover;
+        position: relative;
+
+        &::before {
+            @include before;
+            background: linear-gradient(180deg, rgba(243, 159, 95, 0) 0%, #919BFF 82.69%);
+            z-index: 11;
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+        }
+
+        img {
+            @include imgw;
+            display: block;
+            object-fit: cover;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+
+            &:first-child{
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                -webkit-transform: translateX(50%) scaleX(2);
+                transform: translate(50%) scaleX(2);
+                opacity: 0;
+                -webkit-filter: blur(10px);
+                filter: blur(10px)
+            }
+        }
+    }
+
+    .social-icon {
+        display: grid;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        @include transition;
+        left: -100px;
+        opacity: 0;
+        visibility: hidden;
+
+        a {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: $white;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+        bottom: 50px;
+        left: 10px;
+        right: 10px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+
+            a {
+                color: $white;
+                background-position: 0 95%;
+                background-repeat: no-repeat;
+                background-size: 0% 2px;
+                display: inline;
+
+                &:hover {
+                    background-size: 100% 2px;
+                    background-image: linear-gradient(180deg, $white 0%, $white 100%);
+                }
+            }
+        }
+
+        p {
+            color: $white;
+        }
+    }
+
+    &:hover {
+        .thumb {
+            img {
+                &:first-child {
+                    -webkit-transform: translateX(0) scaleX(1);
+                    transform: translate(0) scaleX(1);
+                    opacity: 1;
+                    -webkit-filter: blur(0);
+                    filter: blur(0)
+                }
+
+                &:nth-child(2){
+                    -webkit-transform: translateX(-50%) scaleX(2);
+                    transform: translateX(-50%) scaleX(2);
+                    opacity: 0;
+                    -webkit-filter: blur(10px);
+                    filter: blur(10px);
+                }
+            } 
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .social-icon {
+            left: 60px;
+            opacity: 1;
+            visibility: visible;
+
+            @include breakpoint (max-xxl){
+               left: 25px;
+            }
+        }
+
+        .content {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.team-slider-7 {
+    margin-right: -35%;
+
+    @include breakpoint (max-xxl){
+        margin-right: 0;
+    }
+}
+
+.team-section-7 {
+    position: relative;
+
+    .shape1 {
+        position: absolute;
+        right: 10%;
+        top: 2%;
+
+        @include breakpoint (max-xl){
+            opacity: .3;
+        }
+    }
+}

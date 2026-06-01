@@ -1,0 +1,402 @@
+.faq-left {
+    .nav {
+        display: grid;
+
+        @include breakpoint (max-lg){
+            @include flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: capitalize;
+            color: $header-color;
+
+            &.active {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.faq-content {
+    .accordion-item {
+        border: 0;
+        background-color: $white;
+        box-shadow: $shadow;
+
+        .accordion-header { 
+            .accordion-button { 
+                font-weight: 700;
+                color: $theme-color;
+                letter-spacing: -.2px;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                background-color: $white;
+                padding: 25px 30px 0;
+                text-transform: capitalize;
+                font-size: 20px;
+                border: none;
+
+                &::after {
+                    // content: "\2b";
+                    // font-family: "Font Awesome 6 Free";
+                    // background: transparent;
+                    font-weight: 500;
+                    transition: all 0.3s ease-in-out !important;
+                    background-image: url(../../assets/img/chevron-right.svg);
+                    color: $theme-color-2;
+                }
+                &:not(.collapsed)::after {
+                    // content: "\f068";
+                    // font-family: "Font Awesome 6 Free";
+                    // background: transparent;
+                    background-image: url(../../assets/img/chevron-down.svg);
+                    font-weight: 500;
+                    color: $theme-color;
+                    transform: rotate(0);
+                }
+
+                &.collapsed {
+                    background-color: transparent;
+                    padding: 25px 30px;
+                    color: $header-color;
+                }
+              
+            }
+        }
+
+        .accordion-collapse { 
+
+            .accordion-body {
+                padding-right: 130px;
+                padding-left: 30px;
+                padding-top: 15px;
+                color: $text-color;
+                background-color: $white;
+                padding-bottom: 25px;
+
+                @include breakpoint (max-xxl){
+                    padding-right: 50px;
+                }
+
+                @include breakpoint (max-lg){
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+.faq-section-5 {
+
+    background-color: #EFF5F6;
+    position: relative;
+    z-index: 99;
+    margin-top: 135px;
+
+    @include breakpoint (max-xl4){
+        margin-top: 100px;
+    }
+
+    @include breakpoint (max-xxl){
+        margin-top: 0;
+        padding: 120px 0;
+    }
+
+    @include breakpoint (max-xl){
+        padding: 100px 0;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 80px 0;
+    }
+
+    &.faq-section-2 {
+        margin-top: 155px;
+
+        @include breakpoint (max-xl4){
+            margin-top: 120px;
+        }
+
+         @include breakpoint (max-xxl){
+            margin-top: 0;
+        }
+    }
+
+    .top-shape {
+        position: absolute;
+        top: -135px;
+        left: 0;
+        right: 0;
+
+        @include breakpoint (max-xl4){
+            top: -100px;
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .bottom-shape {
+        position: absolute;
+        bottom: -90px;
+        left: 0;
+        right: 0;
+        z-index: 9;
+
+        @include breakpoint (max-xl4){
+            bottom: -60px;
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .plane-shape {
+        position: absolute;
+        bottom: -60px;
+        right: 0;
+        z-index: 9;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .faq-image-5 {
+        position: relative;
+
+        @include breakpoint (max-xxl){
+            img {
+                @include imgw;
+            }
+        }
+
+        &.style-2 {
+            max-width: 718px;
+            margin-left: -15%;
+
+            @include breakpoint (max-xl){
+                margin-left: 0;
+            }
+
+            .faq-shape2 {
+                position: absolute;
+                left: -90px;
+                top: -70px;
+
+                @include breakpoint (max-xl){
+                    display: none;
+                }
+            }
+
+            img {
+                position: relative;
+            }
+        }
+
+        .faq-shape {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 15px;
+            z-index: -1;
+        }
+    }
+}
+
+.faq-content-1 {
+    margin-top: -160px;
+
+    @include breakpoint (max-xxl){
+        margin-top: 0;
+    }
+
+    .faq-text {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    .accordion-box {
+        position: relative;
+        margin-top: 35px;
+
+        @include breakpoint (max-xl){
+            margin-top: 25px;
+        }
+
+        .block {
+            position: relative;
+            background-color: transparent;
+            margin-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1;
+            border-radius: 25px;
+            background-color: $white;
+            padding: 20px 30px;
+
+            @include breakpoint (max-xxs){
+                padding: 27px 24px;
+            }
+
+            .acc-btn {
+                position: relative;
+                font-size: 24px;
+                color: $header-color;
+                font-weight: 700;
+                font-family: $heading-font;
+                text-transform: capitalize;
+                cursor: pointer;
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+
+                @include breakpoint (max-xl){
+                    font-size: 20px;
+                }
+
+                 @include breakpoint (max-xxs){
+                    font-size: 17px;
+                   padding-right: 30px;
+                }
+
+                .number {
+                    color: $text-color;
+                    font-family: $heading-font;
+                    font-size: 32px;
+                    font-weight: 500;
+                    letter-spacing: -3px;
+                    margin-left: -50px;
+                    margin-right: 15px;
+                }
+
+
+                .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 35px;
+                    font-size: 18px;
+                    line-height: 18px;
+                    color: $header-color;
+                    -webkit-transition: all 500ms ease;
+                    transition: all 500ms ease;
+                }
+            }
+
+            .acc-content {
+                position: relative;
+                display: none;
+                margin-top: 22px;
+
+                @include breakpoint (max-xxs){
+                    margin-top: 10px;
+                }
+
+                .content {
+                    position: relative;
+
+                    .text {
+                        line-height: 175%;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: $text-color;
+                        max-width: 570px;
+
+                        @include breakpoint (max-xl){
+                            font-size: 14px;
+                        }
+
+                        @include breakpoint (max-xxs){
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .active-block {
+            border: 1px solid $theme-color;
+        }
+    }
+
+
+    .accordion-box .block .acc-content.current {
+        display: block;
+    }
+
+    .accordion-box .block .acc-btn.active .icon {
+        transform: rotate(40deg);
+
+        svg path {
+            fill: $theme-color;
+        }
+    }
+
+    .accordion-box .block .acc-btn.active {
+        color: $theme-color;
+    }
+
+    .accordion-box .block:last-child {
+        margin-bottom: 0;
+    }
+
+    &.faq-content-3 {
+        max-width: 620px;
+        margin-left: auto;
+
+        @include breakpoint (max-xl){
+            margin-left: initial;
+        }
+
+        .faq-image-3 {
+            max-width: 400px;
+            margin-top: 30px;
+
+            img {
+                @include imgw;
+            }
+        }
+    }
+}
+
+.faq-section-7 {
+    position: relative;
+    z-index: 9;
+
+    .train-shape {
+        position: absolute;
+        right: 60px;
+        bottom: 150px;
+        z-index: -1;
+
+        @include breakpoint (max-xxl){
+            opacity: .3;
+        }
+    }
+
+    .vec-shape {
+        position: absolute;
+        left: 40px;
+        top: 35%;
+        z-index: -1;
+
+        @include breakpoint (max-xxl){
+            opacity: .3;
+        }
+    }
+}
