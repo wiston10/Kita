@@ -541,7 +541,7 @@ span {
 }
 .about-activities-section-2 .zebra-shape {
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   right: 0;
 }
 @media (max-width: 1399px) {
@@ -1977,6 +1977,56 @@ span {
     transform: translateX(30px);
   }
 }
+
+
+.compass-shape {
+  -webkit-animation-name: compass-shape;
+  animation-name: compass-shape;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes compass-shape {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(30px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+}
+@keyframes compass-shape {
+  0% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+}
+
+
+
+
+
+
+
+
+
 @keyframes bounce-x {
   0% {
     -webkit-transform: translateX(0);
@@ -9740,7 +9790,7 @@ span {
 }
 .hero-2 .roket-shape {
   position: absolute;
-  left: 30px;
+  left: 40px;
   top: 30%;
 }
 @media (max-width: 1199px) {
@@ -9751,8 +9801,9 @@ span {
 .hero-2 .compass-shape {
   position: absolute;
   left: 5%;
-  bottom: 20%;
-  animation: rounded 5s linear infinite;
+  bottom: -50%;
+  transform-origin: center;
+  animation: compass-shape 8s linear infinite;
 }
 @media (max-width: 1199px) {
   .hero-2 .compass-shape {
@@ -9762,7 +9813,7 @@ span {
 .hero-2 .bus-shape {
   position: absolute;
   left: 50%;
-  bottom: 2%;
+  bottom: -15%;
   transform: translateX(-50%);
   z-index: 9;
 }
@@ -9796,8 +9847,8 @@ span {
 }
 .hero-2 .pencil-shape {
   position: absolute;
-  top: 20%;
-  right: 5%;
+  top: 25%;
+  right: 10%;
   animation: rounded 5s linear infinite;
 }
 .hero-2 .hero-content {
@@ -13480,7 +13531,8 @@ input.main-search-input::placeholder {
   position: absolute;
   bottom: 10%;
   right: 85px;
-  animation: rounded 5s linear infinite;
+  transform-origin: center;
+  animation: duck-walk 8s linear infinite;
 }
 .program-section .love-shape {
   position: absolute;
@@ -14186,6 +14238,29 @@ input.main-search-input::placeholder {
 .program-wrapper-5 {
   padding: 50px 53px;
   position: relative;
+@keyframes duck-walk {
+  0% {
+    transform: translateX(0) translateY(0) scaleX(1);
+  }
+  25% {
+    transform: translateX(-45px) translateY(-4px) scaleX(1);
+  }
+  49% {
+    transform: translateX(-90px) translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(-90px) translateY(0) scaleX(-1);
+  }
+  75% {
+    transform: translateX(-45px) translateY(-4px) scaleX(-1);
+  }
+  99% {
+    transform: translateX(0) translateY(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scaleX(1);
+  }
+}
   z-index: 9;
 }
 @media (max-width: 767px) {
