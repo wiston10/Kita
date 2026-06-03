@@ -26,7 +26,36 @@ CSS TABLE OF CONTENTS
 (function($) {
     "use strict";
 
-    $(document).ready( function() {
+    function loadSharedComponents() {
+        const componentNodes = document.querySelectorAll('[data-component]');
+
+        if (!componentNodes.length) {
+            return Promise.resolve();
+        }
+
+        const requests = Array.from(componentNodes).map(function(node) {
+            const componentPath = node.getAttribute('data-component');
+
+            return fetch(componentPath)
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Failed to load ' + componentPath);
+                    }
+
+                    return response.text();
+                })
+                .then(function(markup) {
+                    node.innerHTML = markup;
+                })
+                .catch(function(error) {
+                    console.error(error);
+                });
+        });
+
+        return Promise.all(requests);
+    }
+
+    function initializeSite() {
 
         //>> Mobile Menu Js Start <<//
         $('#mobile-menu').meanmenu({
@@ -1010,7 +1039,13 @@ CSS TABLE OF CONTENTS
         });
 
 
-    }); // End Document Ready Function
+    } // End Site Initialization Function
+
+    $(document).ready(function() {
+        loadSharedComponents().finally(function() {
+            initializeSite();
+        });
+    });
 
     function loader() {
         $(window).on('load', function() {
