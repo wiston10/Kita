@@ -1064,11 +1064,85 @@ CSS TABLE OF CONTENTS
     });
 
     function loader() {
-        $(window).on('load', function() {
-            // Animate loader off screen
-            $(".preloader").addClass('loaded');                    
-            $(".preloader").delay(120).fadeOut(180);
-        });
+        let preloaderHidden = false;
+        let fallbackTimer = null;
+        let observer = null;
+
+        function cleanupPreloaderHandlers() {
+            if (fallbackTimer) {
+                clearTimeout(fallbackTimer);
+                fallbackTimer = null;
+            }
+
+            if (observer) {
+                observer.disconnect();
+                observer = null;
+            }
+        }
+
+        function hidePreloader() {
+            try {
+                if (preloaderHidden) {
+                    return;
+                }
+
+                const $preloader = $(".preloader");
+
+                if (!$preloader.length) {
+                    return;
+                }
+
+                preloaderHidden = true;
+                cleanupPreloaderHandlers();
+
+                $preloader.addClass('loaded');
+                $preloader.delay(120).fadeOut(180, function() {
+                    try {
+                        $(this).remove();
+                    } catch (removeError) {
+                        console.error('Failed to remove preloader node:', removeError);
+                    }
+                });
+            } catch (error) {
+                console.error('Failed to hide preloader:', error);
+                preloaderHidden = true;
+                cleanupPreloaderHandlers();
+
+                try {
+                    $(".preloader").remove();
+                } catch (forceRemoveError) {
+                    console.error('Failed to force-remove preloader:', forceRemoveError);
+                }
+            }
+        }
+
+        // Normal flow: hide once everything is fully loaded.
+        $(window).on('load', hidePreloader);
+
+        // Try immediately in case preloader is already in DOM.
+        setTimeout(hidePreloader, 0);
+
+        // If component markup injects preloader later, close it as soon as it appears.
+        try {
+            observer = new MutationObserver(function() {
+                hidePreloader();
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        } catch (observerError) {
+            console.error('Failed to observe preloader mutations:', observerError);
+        }
+
+        // Hard limit: after a short time, force close and allow navigation.
+        fallbackTimer = setTimeout(function() {
+            try {
+                hidePreloader();
+
+                // Last resort: remove any stuck preloader overlays.
+                $(".preloader").remove();
+            } catch (fallbackError) {
+                console.error('Fallback preloader cleanup failed:', fallbackError);
+            }
+        }, 1800);
     }
 
     loader();
