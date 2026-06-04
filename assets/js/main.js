@@ -1067,7 +1067,7 @@ CSS TABLE OF CONTENTS
         $(window).on('load', function() {
             // Animate loader off screen
             $(".preloader").addClass('loaded');                    
-            $(".preloader").delay(600).fadeOut();                       
+            $(".preloader").delay(120).fadeOut(180);
         });
     }
 
