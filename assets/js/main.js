@@ -26,6 +26,22 @@ CSS TABLE OF CONTENTS
 (function($) {
     "use strict";
 
+    function renderComponentMarkup(node, markup) {
+        let renderedMarkup = markup;
+
+        Array.from(node.attributes).forEach(function(attribute) {
+            if (!attribute.name.startsWith('data-prop-')) {
+                return;
+            }
+
+            const propName = attribute.name.replace('data-prop-', '');
+            const token = '{{' + propName + '}}';
+            renderedMarkup = renderedMarkup.split(token).join(attribute.value);
+        });
+
+        return renderedMarkup;
+    }
+
     function loadSharedComponents() {
         const componentNodes = document.querySelectorAll('[data-component]');
 
@@ -45,7 +61,7 @@ CSS TABLE OF CONTENTS
                     return response.text();
                 })
                 .then(function(markup) {
-                    node.innerHTML = markup;
+                    node.innerHTML = renderComponentMarkup(node, markup);
                 })
                 .catch(function(error) {
                     console.error(error);
