@@ -2436,7 +2436,7 @@ span {
   }
 }
 .contact-wrapper .contact-content .contact-form-items .form-clt span {
-  text-transform: capitalize;
+  text-transform: none;
 }
 .contact-wrapper .contact-content .contact-form-items .form-clt input::placeholder, .contact-wrapper .contact-content .contact-form-items .form-clt textarea::placeholder {
   color: var(--white);
@@ -2605,7 +2605,7 @@ span {
 .contact-wrapper-2 .contact-content .contact-form-items .form-clt span {
   color: var(--header);
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .contact-wrapper-2 .contact-content .contact-form-items .form-clt input, .contact-wrapper-2 .contact-content .contact-form-items .form-clt textarea {
   border: 1px solid var(--border);
