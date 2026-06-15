@@ -1096,7 +1096,7 @@ CSS TABLE OF CONTENTS
                 cleanupPreloaderHandlers();
 
                 $preloader.addClass('loaded');
-                $preloader.delay(120).fadeOut(180, function() {
+                $preloader.delay(300).fadeOut(500, function() {
                     try {
                         $(this).remove();
                     } catch (removeError) {
