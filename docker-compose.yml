@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    container_name: mi_proyecto_php
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html

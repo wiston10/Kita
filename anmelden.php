@@ -176,18 +176,73 @@ function escapedValue(string $value): string
             }
 
             .choice-grid {
-                display: grid;
-                gap: 10px;
-                grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 12px 24px;
+                width: 100%;
             }
 
-            .choice-grid label,
-            .radio-inline-group label {
+            .choice-grid label {
+                display: inline-flex;
                 align-items: center;
-                color: #fff;
-                display: flex;
-                font-size: 15px;
                 gap: 8px;
+                margin: 0;
+                padding: 0;
+                width: auto;
+                white-space: nowrap;
+                color: #fff;
+                font-size: 15px;
+            }
+
+            .choice-grid input[type="checkbox"] {
+                flex: 0 0 auto;
+                width: auto;
+                margin: 0;
+            }
+
+            .module-title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 14px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .module-note {
+                color: #ffffffcc;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .radio-inline-group {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 30px;
+                margin-top: 10px;
+            }
+
+            .radio-inline-group label {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0;
+                padding: 0;
+                width: auto;
+                white-space: nowrap;
+                color: #fff;
+                font-size: 15px;
+            }
+
+            .radio-inline-group input[type="radio"] {
+                flex: 0 0 auto;
+                width: auto;
                 margin: 0;
             }
 

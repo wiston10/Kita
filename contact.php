@@ -76,7 +76,7 @@ function e(string $value): string
 
         <div data-component="assets/Component/header.html"></div>
 
-        <div data-component="assets/Component/search-wrap.html"></div>
+        
 
 
         <div
