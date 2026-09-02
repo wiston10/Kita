@@ -1980,6 +1980,7 @@ span {
 
 
 .compass-shape {
+  animation: compass-shape 3s infinite linear;
   -webkit-animation-name: compass-shape;
   animation-name: compass-shape;
   -webkit-animation-duration: 3s;

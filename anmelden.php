@@ -1,4 +1,10 @@
 <?php
+
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
+require __DIR__ . '/vendor/autoload.php';
+
 $moduleDays = [
     'modul_a' => ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'],
     'modul_b' => ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'],
@@ -34,6 +40,7 @@ $successMessage = '';
 $submissionSummary = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     foreach ($formData as $field => $value) {
         $formData[$field] = trim((string)($_POST[$field] ?? ''));
     }
@@ -45,9 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $postedDays = [];
         }
 
-        $selectedModules[$moduleKey] = array_values(array_intersect($moduleDays[$moduleKey], $postedDays));
+        $selectedModules[$moduleKey] = array_values(
+            array_intersect($moduleDays[$moduleKey], $postedDays)
+        );
     }
 
+    // Validación
     if ($formData['parent_one_name'] === '') {
         $errors[] = 'Bitte geben Sie den Vorname Name (1. Elternteil) an.';
     }
@@ -68,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Bitte geben Sie die Telefonnummer an.';
     }
 
-    if ($formData['email'] === '' || !filter_var($formData['email'], FILTER_VALIDATE_EMAIL)) {
+    if (
+        $formData['email'] === '' ||
+        !filter_var($formData['email'], FILTER_VALIDATE_EMAIL)
+    ) {
         $errors[] = 'Bitte geben Sie eine gueltige E-Mail-Adresse an.';
     }
 
@@ -84,16 +97,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Bitte waehlen Sie das Geschlecht des Kindes.';
     }
 
-    $bookableModuleCount = count($selectedModules['modul_a'])
-        + count($selectedModules['modul_b'])
-        + count($selectedModules['modul_c'])
-        + count($selectedModules['modul_e']);
+    $bookableModuleCount =
+        count($selectedModules['modul_a']) +
+        count($selectedModules['modul_b']) +
+        count($selectedModules['modul_c']) +
+        count($selectedModules['modul_e']);
 
     if ($bookableModuleCount === 0) {
         $errors[] = 'Bitte waehlen Sie mindestens einen Tag in Modul A, B, C oder E.';
     }
 
+    // Solo intentamos enviar el correo si toda la validación fue correcta.
     if (!$errors) {
+
         $submissionSummary = [
             'Elternteil 1' => $formData['parent_one_name'],
             'Elternteil 2' => $formData['parent_two_name'],
@@ -104,7 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'E-Mail' => $formData['email'],
             'Kind' => $formData['child_name'],
             'Geburtstag Kind' => $formData['child_birthday'],
-            'Geschlecht Kind' => $formData['child_gender'] === 'maennlich' ? 'maennlich' : 'weiblich',
+            'Geschlecht Kind' => $formData['child_gender'] === 'maennlich'
+                ? 'maennlich'
+                : 'weiblich',
             'Mitteilung' => $formData['message'],
             'Modul A' => implode(', ', $selectedModules['modul_a']),
             'Modul B' => implode(', ', $selectedModules['modul_b']),
@@ -113,14 +131,137 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'Modul E' => implode(', ', $selectedModules['modul_e']),
         ];
 
-        $successMessage = 'Vielen Dank. Ihre Anmeldung wurde intern uebermittelt.';
+        // Credenciales obtenidas desde las variables de entorno del contenedor.
+        $mailHost = getenv('MAIL_HOST') ?: 'smtp.gmail.com';
+        $mailPort = (int)(getenv('MAIL_PORT') ?: 587);
+        $mailUsername = getenv('MAIL_USERNAME') ?: '';
+        $mailPassword = getenv('MAIL_PASSWORD') ?: '';
+        $mailFrom = getenv('MAIL_FROM') ?: $mailUsername;
+        $mailTo = getenv('MAIL_TO') ?: $mailUsername;
 
-        foreach ($formData as $field => $value) {
-            $formData[$field] = '';
-        }
+        if (
+            $mailUsername === '' ||
+            $mailPassword === '' ||
+            $mailFrom === '' ||
+            $mailTo === ''
+        ) {
+            $errors[] = 'Der E-Mail-Versand ist momentan nicht konfiguriert. Bitte versuchen Sie es später erneut.';
+        } else {
 
-        foreach ($selectedModules as $moduleKey => $days) {
-            $selectedModules[$moduleKey] = [];
+            $mail = new PHPMailer(true);
+
+            try {
+                // SMTP
+                $mail->isSMTP();
+                $mail->Host = $mailHost;
+                $mail->SMTPAuth = true;
+                $mail->Username = $mailUsername;
+                $mail->Password = $mailPassword;
+
+                if ($mailPort === 465) {
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                } else {
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                }
+
+                $mail->Port = $mailPort;
+                $mail->CharSet = 'UTF-8';
+
+                // Remitente y destinatario
+                $mail->setFrom($mailFrom, 'KITA Schwanenaescht');
+                $mail->addAddress($mailTo, 'KITA Schwanenaescht');
+
+                // Responder directamente al padre/madre
+                $mail->addReplyTo(
+                    $formData['email'],
+                    $formData['parent_one_name']
+                );
+
+                // Asunto
+                $mail->Subject = 'Neue Anmeldung - KITA Schwanenaescht';
+
+                // Texto plano
+                $body = "Neue Anmeldung über das Online-Formular\n\n";
+
+                foreach ($submissionSummary as $label => $value) {
+                    $body .= $label . ': ' . ($value !== '' ? $value : '-') . "\n";
+                }
+
+                $body .= "\n----------------------------------------\n";
+                $body .= "Gesendet am: " . date('d.m.Y H:i:s') . "\n";
+
+                $mail->isHTML(false);
+                $mail->Body = $body;
+
+                // Enviar correo a la Kita
+                $mail->send();
+
+                /*
+                 * Correo de confirmación al padre/madre.
+                 * Si falla este segundo correo, la inscripción principal
+                 * ya fue enviada, por eso no mostramos error de inscripción.
+                 */
+                try {
+                    $confirmation = new PHPMailer(true);
+
+                    $confirmation->isSMTP();
+                    $confirmation->Host = $mailHost;
+                    $confirmation->SMTPAuth = true;
+                    $confirmation->Username = $mailUsername;
+                    $confirmation->Password = $mailPassword;
+
+                    if ($mailPort === 465) {
+                        $confirmation->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    } else {
+                        $confirmation->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    }
+
+                    $confirmation->Port = $mailPort;
+                    $confirmation->CharSet = 'UTF-8';
+
+                    $confirmation->setFrom($mailFrom, 'KITA Schwanenaescht');
+                    $confirmation->addAddress(
+                        $formData['email'],
+                        $formData['parent_one_name']
+                    );
+
+                    $confirmation->Subject = 'Bestätigung Ihrer Anmeldung - KITA Schwanenaescht';
+
+                    $confirmation->isHTML(false);
+                    $confirmation->Body =
+                        "Guten Tag " . $formData['parent_one_name'] . ",\n\n" .
+                        "vielen Dank für Ihre Anmeldung bei der KITA Schwanenaescht.\n\n" .
+                        "Wir haben Ihre Angaben erfolgreich erhalten und werden uns " .
+                        "schnellstmöglich bei Ihnen melden.\n\n" .
+                        "Freundliche Grüsse\n" .
+                        "KITA Schwanenaescht";
+
+                    $confirmation->send();
+
+                } catch (Exception $confirmationException) {
+                    // No bloqueamos la inscripción si falla la confirmación.
+                }
+
+                $successMessage =
+                    'Vielen Dank. Ihre Anmeldung wurde erfolgreich übermittelt.';
+
+                // Limpiar formulario después de un envío correcto.
+                foreach ($formData as $field => $value) {
+                    $formData[$field] = '';
+                }
+
+                foreach ($selectedModules as $moduleKey => $days) {
+                    $selectedModules[$moduleKey] = [];
+                }
+
+            } catch (Exception $e) {
+                $errors[] =
+                    'Die Anmeldung konnte momentan nicht gesendet werden. ' .
+                    'Bitte versuchen Sie es später erneut.';
+
+                // Para desarrollo, puedes consultar el error real en los logs:
+                error_log('PHPMailer error: ' . $mail->ErrorInfo);
+            }
         }
     }
 }
@@ -129,7 +270,9 @@ function escapedValue(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
