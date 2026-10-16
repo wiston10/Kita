@@ -115,7 +115,6 @@
         background-color: $white;
         position: relative;
         font-weight: 700;
-        text-transform: capitalize;
 
           &::before {
             position: absolute;
@@ -177,7 +176,6 @@
         border-radius: 100px;
         max-width: 230px;
         margin: 0 auto;
-        text-transform: capitalize;
         z-index: 11;
         font-size: 16px;
         font-weight: 700;

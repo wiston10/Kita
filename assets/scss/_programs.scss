@@ -208,10 +208,10 @@
         left: 0;
         background-color: $theme-color-2;
         transition: all 500ms ease;
-        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 288"><path fill-rule="evenodd" clip-rule="evenodd" d="M131.352 0.968405C166.359 0.739595 212.216 -6.12903 237.965 20.2925C264.719 47.745 268.813 92.0436 269.889 132.547C270.998 174.303 264.054 235.303 237.965 265.31C211.488 295.761 169.371 285.444 131.352 287.293C91.3384 289.24 47.0661 289.453 20.2754 256.287C-5.7936 224.014 -0.425215 175.827 2.64371 132.547C5.39126 93.7981 -4.50211 53.0434 20.2754 25.6771C44.9629 -1.5898 96.5877 1.19563 131.352 0.968405Z" /></svg>');
+        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 253.125 270"><path fill-rule="evenodd" clip-rule="evenodd" transform="scale(0.9375)" d="M131.352 0.968405C166.359 0.739595 212.216 -6.12903 237.965 20.2925C264.719 47.745 268.813 92.0436 269.889 132.547C270.998 174.303 264.054 235.303 237.965 265.31C211.488 295.761 169.371 285.444 131.352 287.293C91.3384 289.24 47.0661 289.453 20.2754 256.287C-5.7936 224.014 -0.425215 175.827 2.64371 132.547C5.39126 93.7981 -4.50211 53.0434 20.2754 25.6771C44.9629 -1.5898 96.5877 1.19563 131.352 0.968405Z" /></svg>');
         mask-repeat: no-repeat;
         mask-position: center center;
-        mask-size: cover;
+        mask-size: contain;
         width: 100%;
         height: 100%;
         z-index: -1;
@@ -1215,7 +1215,6 @@
                 background: rgba(3, 166, 166, 0.1);
                 border-radius: 10px;
                 font-weight: 600;
-                text-transform: capitalize;
                 padding: 8px 10px;
                 line-height: 1;
                 margin-top: 15px;
@@ -1556,7 +1555,6 @@
         h3 {
             font-size: 30px;
             line-height: 1;
-            text-transform: capitalize;
 
             @include breakpoint (max-xxl){
                 font-size: 24px;
@@ -2091,7 +2089,6 @@
             display: inline-block;
             background: rgba(3, 166, 166, 0.1);
             border-radius: 10px;
-            text-transform: capitalize;
             padding: 8px 12px;
             line-height: 1;
             margin-top: 20px;
@@ -2172,7 +2169,6 @@
     .title {
         font-size: 20px;
         font-weight: 700;
-        text-transform: capitalize;
         text-align: center;
         
         @include breakpoint (max-md){
@@ -2300,7 +2296,6 @@
         }
 
         .title {
-            text-transform: capitalize;
             font-size: 30px;
             font-weight: 700;
             margin-top: 15px;

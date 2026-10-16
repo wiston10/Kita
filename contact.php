@@ -169,7 +169,7 @@ function e(string $value): string
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="de">
 
 <head>
 
@@ -275,7 +275,7 @@ function e(string $value): string
                             >
 
                                 <strong>
-                                    Bitte pruefen Sie folgende Punkte:
+                                    Bitte prüfen Sie folgende Punkte:
                                 </strong>
 
                                 <ul class="mb-0 mt-2">
@@ -426,7 +426,7 @@ function e(string $value): string
                     >
 
                         <img
-                            src="assets/img/kita200.jpg"
+                            src="assets/img/kita-126h.jpg"
                             alt="contact-img"
                         >
 

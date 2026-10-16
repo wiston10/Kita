@@ -472,7 +472,7 @@
             color: $header-color;
 
             a {
-               color: $theme-color;
+               color: color-mix(in srgb, $theme-color 80%, black);
             }
         }
         
@@ -707,10 +707,6 @@
         z-index: 99;
         padding-bottom: 20px;
         padding-top: 15px;
-
-        b {
-            text-transform: capitalize;
-        }
     }
 }
 
@@ -784,7 +780,6 @@
             position: relative;
             padding-bottom: 15px;
             margin-bottom: 22px;
-            text-transform: capitalize;
 
             &::before {
                 position: absolute;
@@ -861,14 +856,12 @@
 
             h3 {
                 font-size: 20px;
-                text-transform: capitalize;
             }
         }
 
         .gt-list-area {
             li {
                 @include transition;
-                text-transform: capitalize;
 
                 &:not(:last-child){
                     margin-bottom: 15px;

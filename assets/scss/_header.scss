@@ -176,7 +176,6 @@
 				padding: 20px 0;
 				text-align: left;
 				position: relative;
-				text-transform: capitalize;
 				@include transition;
 
 				i {
@@ -473,7 +472,6 @@
                             font-weight: 700;
                             font-family: $heading-font;
 							color: $header-color;
-							text-transform: capitalize;
 						}
 					}
 				}
@@ -710,7 +708,6 @@
 					justify-content: space-between;
 					align-items: center;
 					font-size: 16px;
-					text-transform: capitalize;
 					font-weight: 600;
 
 					&:not(:last-child){
@@ -1576,7 +1573,6 @@
 				li {
 					font-size: 16px;
 					font-weight: 600;
-					text-transform: capitalize;
 
 					a {
 						color: $text-color;
@@ -1604,7 +1600,6 @@
 				.theme-btn {
 					width: 100%;
 					padding: 16px 40px;
-					text-transform: capitalize !important;
 				}
 			}
 
@@ -1782,7 +1777,6 @@
 			
 			li{
 				color: $white;
-				text-transform: capitalize;
 				font-weight: 600;
 				font-size: 18px;
 	

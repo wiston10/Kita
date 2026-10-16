@@ -138,6 +138,7 @@
 
         .icon {
             width: 90px;
+            max-width: 90px;
             height: 90px;
             line-height: 100px;
             text-align: center;
@@ -833,7 +834,6 @@
             position: relative;
             z-index: 99;
             font-size: 16px;
-            text-transform: capitalize;
         }
 
         .bg-shape {
@@ -906,7 +906,6 @@
             font-size: 18px;
             font-weight: 700;
             color: $theme-color;
-            text-transform: capitalize;
             font-family: $heading-font;
 
               @include breakpoint (max-lg){
@@ -973,7 +972,6 @@
         .title {
             font-size: 20px;
             font-weight: 700;
-            text-transform: capitalize;
             margin-top: 20px;
 
              @include breakpoint (max-xxl){
@@ -1106,7 +1104,6 @@
                 .title {
                     .iconss-title {
                         font-size: 16px;
-                        text-transform: capitalize;
                         color: $header-color;
                         line-height: 135%;
                         font-weight: 700;
@@ -1137,14 +1134,12 @@
                 font-weight: 700;
                 font-family: $heading-font;
                 color: $header-color;
-                text-transform: capitalize;
             }
 
             .progress-value {
                 margin-bottom: 10px;
                 //margin-top: -0.5em;
                 color: $header-color;
-                text-transform: capitalize;
             }
             .progress {
                 position: relative;
@@ -1225,7 +1220,6 @@
             margin-bottom: 15px;
 
             span {
-                text-transform: capitalize;
                 font-size: 15px;
                 font-weight: bold;
                 font-family: $heading-font;
@@ -1343,7 +1337,6 @@
             li {
                 @include flex;
                 gap: 10px;
-                text-transform: capitalize;
                 font-size: 16px;
 
                 &:not(:last-child){
@@ -1486,7 +1479,6 @@
                 .title {
                     font-size: 18px;
                     font-weight: 700;
-                    text-transform: capitalize;
                     @include breakpoint (max-xxl){
                        font-size: 14px;
                     }
@@ -1623,7 +1615,6 @@
                 .title {
                     font-size: 18px;
                     font-weight: 700;
-                    text-transform: capitalize;
                     @include breakpoint (max-xxl){
                        font-size: 14px;
                     }
@@ -1819,7 +1810,6 @@
         font-size: 18px;
         font-weight: 700;
         color: $header-color;
-        text-transform: capitalize;
         margin-bottom: 30px;
         text-align: center;
     }
@@ -1865,10 +1855,6 @@
             &::before {
                 background: #E6E8FC;
             }
-        }
-
-        h3 {
-            text-transform: capitalize;
         }
     }
 

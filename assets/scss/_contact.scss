@@ -106,10 +106,6 @@
 
         .contact-form-items {
             .form-clt {
-                span {
-                    text-transform: capitalize;
-                }
-                
                 input,textarea {
                     &::placeholder {
                         color: $white;
@@ -306,7 +302,6 @@
                 span {
                     color: $header-color;
                     font-weight: 600;
-                    text-transform: capitalize;
                 }
         
                 input,textarea {
@@ -462,7 +457,6 @@
         font-size: 50px;
         font-weight: 700;
         color: $white;
-        text-transform: capitalize;
         margin-bottom: 12px;
 
         @include breakpoint (max-sm){
@@ -493,7 +487,6 @@
                 color: $white;
                 font-size: 18px;
                 font-weight: 600;
-                text-transform: capitalize;
                 margin-bottom: 8px;
             }
 
@@ -507,7 +500,6 @@
             border-radius: 15px;
             color: $header-color;
             font-weight: 400;
-            text-transform: capitalize;
 
             &::placeholder {
                 color: $header-color;
@@ -630,7 +622,6 @@
                 line-height: 1;
                 border-radius: 8px;
                 font-size: 15px;
-                text-transform: capitalize;
 
                 &::placeholder {
                     color: $text-color;

@@ -8,7 +8,7 @@ Version: 1.0.0
 /*CSS Table Of Content Ends Here*/
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");*/
 :root {
   --body: #fff;
   --black: #000;
@@ -47,7 +47,6 @@ Version: 1.0.0
   text-align: center;
   line-height: 1;
   z-index: 9;
-  text-transform: capitalize;
 }
 .theme-btn i {
   margin-left: 10px;
@@ -152,7 +151,6 @@ Version: 1.0.0
   display: inline-block;
   font-weight: 600;
   color: var(--text);
-  text-transform: capitalize;
 }
 .theme-btn-2 i {
   margin-left: 10px;
@@ -207,7 +205,6 @@ h6 {
   margin: 0px;
   padding: 0;
   color: var(--header);
-  text-transform: capitalize;
   transition: all 0.4s ease-in-out;
 }
 
@@ -2199,7 +2196,6 @@ span {
   background-color: var(--white);
   position: relative;
   font-weight: 700;
-  text-transform: capitalize;
 }
 .brand-section-5 p::before {
   position: absolute;
@@ -2257,7 +2253,6 @@ span {
   border-radius: 100px;
   max-width: 230px;
   margin: 0 auto;
-  text-transform: capitalize;
   z-index: 11;
   font-size: 16px;
   font-weight: 700;
@@ -2750,7 +2745,6 @@ span {
   font-size: 50px;
   font-weight: 700;
   color: var(--white);
-  text-transform: capitalize;
   margin-bottom: 12px;
 }
 @media (max-width: 575px) {
@@ -2781,7 +2775,6 @@ span {
   color: var(--white);
   font-size: 18px;
   font-weight: 600;
-  text-transform: capitalize;
   margin-bottom: 8px;
 }
 .contact-form-items-7 .form-box .form-clt input, .contact-form-items-7 .form-box .form-clt textarea {
@@ -2794,7 +2787,6 @@ span {
   border-radius: 15px;
   color: var(--header);
   font-weight: 400;
-  text-transform: capitalize;
 }
 .contact-form-items-7 .form-box .form-clt input::placeholder, .contact-form-items-7 .form-box .form-clt textarea::placeholder {
   color: var(--header);
@@ -2900,7 +2892,6 @@ span {
   line-height: 1;
   border-radius: 8px;
   font-size: 15px;
-  text-transform: capitalize;
 }
 .login-wrapper .login-items .contact-left-items .form-group input::placeholder {
   color: var(--text);
@@ -4352,7 +4343,6 @@ span {
 .faq-left .nav .nav-link {
   font-weight: 700;
   font-size: 18px;
-  text-transform: capitalize;
   color: var(--header);
 }
 .faq-left .nav .nav-link.active {
@@ -4373,7 +4363,6 @@ span {
   box-shadow: none;
   background-color: var(--white);
   padding: 25px 30px 0;
-  text-transform: capitalize;
   font-size: 20px;
   border: none;
 }
@@ -4584,7 +4573,6 @@ span {
   color: var(--header);
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
-  text-transform: capitalize;
   cursor: pointer;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -4847,6 +4835,7 @@ span {
 }
 .feature-value-items .value-icon-items .icon {
   width: 90px;
+  max-width: 90px;
   height: 90px;
   line-height: 100px;
   text-align: center;
@@ -5489,7 +5478,6 @@ span {
   position: relative;
   z-index: 99;
   font-size: 16px;
-  text-transform: capitalize;
 }
 .counter-box-items5 .counter-box .bg-shape {
   position: absolute;
@@ -5551,7 +5539,6 @@ span {
   font-size: 18px;
   font-weight: 700;
   color: var(--theme);
-  text-transform: capitalize;
   font-family: "Quicksand", sans-serif;
 }
 @media (max-width: 991px) {
@@ -5620,7 +5607,6 @@ span {
 .school-facilities-wrapper .school-facilities-box-items .title {
   font-size: 20px;
   font-weight: 700;
-  text-transform: capitalize;
   margin-top: 20px;
 }
 @media (max-width: 1399px) {
@@ -5744,7 +5730,6 @@ span {
 }
 .choose-us-wrapper-6 .choose-us-content ul li .title .iconss-title {
   font-size: 16px;
-  text-transform: capitalize;
   color: var(--header);
   line-height: 135%;
   font-weight: 700;
@@ -5772,12 +5757,10 @@ span {
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
   color: var(--header);
-  text-transform: capitalize;
 }
 .choose-us-wrapper-6 .choose-us-content .skill-feature .progress-value {
   margin-bottom: 10px;
   color: var(--header);
-  text-transform: capitalize;
 }
 .choose-us-wrapper-6 .choose-us-content .skill-feature .progress {
   position: relative;
@@ -5859,7 +5842,6 @@ span {
   margin-bottom: 15px;
 }
 .footer-kids-section .section-title-area .client-sub span {
-  text-transform: capitalize;
   font-size: 15px;
   font-weight: bold;
   font-family: "Quicksand", sans-serif;
@@ -5978,7 +5960,6 @@ span {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-transform: capitalize;
   font-size: 16px;
 }
 .footer-kids-box-items .content ul li:not(:last-child) {
@@ -6117,7 +6098,6 @@ span {
 .values-wrapper-6 .values-list li .content .title {
   font-size: 18px;
   font-weight: 700;
-  text-transform: capitalize;
 }
 @media (max-width: 1399px) {
   .values-wrapper-6 .values-list li .content .title {
@@ -6245,7 +6225,6 @@ span {
 .why-choose-wrapper-7 .values-list li .content .title {
   font-size: 18px;
   font-weight: 700;
-  text-transform: capitalize;
 }
 @media (max-width: 1399px) {
   .why-choose-wrapper-7 .values-list li .content .title {
@@ -6428,7 +6407,6 @@ span {
   font-size: 18px;
   font-weight: 700;
   color: var(--header);
-  text-transform: capitalize;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -6465,9 +6443,6 @@ span {
 }
 .how-work-box-7 .step-box.bg-4::before {
   background: #E6E8FC;
-}
-.how-work-box-7 .step-box h3 {
-  text-transform: capitalize;
 }
 .how-work-box-7.style-box-1 {
   text-align: center;
@@ -7160,7 +7135,7 @@ span {
   color: var(--header);
 }
 .footer-bottom .footer-wrapper p a {
-  color: var(--theme);
+  color: color-mix(in srgb, var(--theme) 80%, black);
 }
 .footer-bottom .footer-wrapper .footer-menu {
   display: flex;
@@ -7378,9 +7353,6 @@ span {
   padding-bottom: 20px;
   padding-top: 15px;
 }
-.footer-section-5 .footer-text-5 b {
-  text-transform: capitalize;
-}
 
 .footer-info-wrapper-5 {
   border-bottom: 2px dashed rgba(56, 84, 105, 0.2);
@@ -7448,7 +7420,6 @@ span {
   position: relative;
   padding-bottom: 15px;
   margin-bottom: 22px;
-  text-transform: capitalize;
 }
 .footer-info-wrapper-5 .footer-info-items .title::before {
   position: absolute;
@@ -7514,11 +7485,9 @@ span {
 }
 .footer-widget-wrapper-5 .footer-widget-items .widget-head h3 {
   font-size: 20px;
-  text-transform: capitalize;
 }
 .footer-widget-wrapper-5 .footer-widget-items .gt-list-area li {
   transition: all 0.4s ease-in-out;
-  text-transform: capitalize;
 }
 .footer-widget-wrapper-5 .footer-widget-items .gt-list-area li:not(:last-child) {
   margin-bottom: 15px;
@@ -7714,7 +7683,6 @@ span {
   padding: 20px 0;
   text-align: left;
   position: relative;
-  text-transform: capitalize;
   transition: all 0.4s ease-in-out;
 }
 .header-main .main-menu ul li a i {
@@ -7956,7 +7924,6 @@ span {
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
   color: var(--header);
-  text-transform: capitalize;
 }
 .header-main .main-menu ul li .has-homemenu {
   /* Hide scrollbar - Firefox */
@@ -8163,7 +8130,6 @@ span {
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  text-transform: capitalize;
   font-weight: 600;
 }
 .header-1 .header-main .header-left .category-dropdown ul li:not(:last-child) {
@@ -8941,7 +8907,6 @@ span {
 .offcanvas__wrapper .offcanvas__content .offcanvas__contact ul li {
   font-size: 16px;
   font-weight: 600;
-  text-transform: capitalize;
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__contact ul li a {
   color: var(--text);
@@ -8961,7 +8926,6 @@ span {
 .offcanvas__wrapper .offcanvas__content .offcanvas__contact .header-button .theme-btn {
   width: 100%;
   padding: 16px 40px;
-  text-transform: capitalize !important;
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__contact .social-icon {
   margin-top: 30px;
@@ -9135,7 +9099,6 @@ span {
 }
 .breadcrumb-wrapper .page-heading .breadcrumb-items li {
   color: var(--white);
-  text-transform: capitalize;
   font-weight: 600;
   font-size: 18px;
 }
@@ -9633,7 +9596,7 @@ span {
 .hero-1 .hero-content h5 {
   margin-bottom: 15px;
   color: var(--theme);
-  font-family: "Pangolin";
+  font-family: "Quicksand";
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -9865,7 +9828,7 @@ span {
 .hero-2 .hero-content h5 {
   margin-bottom: 15px;
   color: var(--theme);
-  font-family: "Pangolin";
+  font-family: "Quicksand";
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -10123,7 +10086,7 @@ span {
 .hero-3 .hero-content h5 {
   margin-bottom: 20px;
   position: relative;
-  font-family: Pangolin;
+  font-family: "Quicksand";
   font-weight: 500;
   color: var(--theme);
 }
@@ -10265,7 +10228,7 @@ span {
 .hero-4 .hero-content h5 {
   margin-bottom: 15px;
   color: var(--theme);
-  font-family: "Pangolin";
+  font-family: "Quicksand";
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -10909,7 +10872,6 @@ span {
   }
 }
 .hero-6 .hero-content .hero-sub span {
-  text-transform: capitalize;
   font-size: 15px;
   font-weight: bold;
   font-family: "Quicksand", sans-serif;
@@ -11161,7 +11123,6 @@ span {
   transform: translateY(-150px);
 }
 .hero-7 .hero-content .sub-text {
-  text-transform: capitalize;
   color: var(--theme);
   position: relative;
   margin-bottom: 5px;
@@ -11431,7 +11392,6 @@ span {
   height: 100px;
   line-height: 90px;
   font-weight: 700;
-  text-transform: capitalize;
   color: var(--theme);
 }
 .text-slider:not(:last-child) {
@@ -11644,7 +11604,6 @@ span {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
-  text-transform: capitalize;
   border-bottom: 1px solid var(--border) !important;
   border: none;
 }
@@ -12117,7 +12076,6 @@ span {
   font-weight: 500;
   background: var(--white);
   margin-right: 5px;
-  text-transform: capitalize;
   margin-bottom: 10px;
   border-radius: 4px;
   border: 1px solid var(--border);
@@ -12176,7 +12134,6 @@ span {
 }
 .news-details-area .blog-post-details .single-blog-post .post-content .hilight-text p {
   font-weight: 600;
-  text-transform: capitalize;
   font-style: italic;
   line-height: 26px;
   color: var(--header);
@@ -12201,7 +12158,6 @@ span {
   line-height: 1;
   background: transparent;
   margin-right: 8px;
-  text-transform: capitalize;
   font-weight: 500;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -13097,7 +13053,6 @@ span {
   height: 70px;
   border: 0;
   padding: 0 50px;
-  text-transform: capitalize;
   background: transparent;
   font-size: 25px;
   color: var(--theme);
@@ -13249,7 +13204,6 @@ input.main-search-input::placeholder {
   border-radius: 6px;
   font-weight: 700;
   font-size: 15px;
-  text-transform: capitalize;
   color: var(--header);
   transition: all 0.3s ease-in-out;
 }
@@ -13548,12 +13502,13 @@ input.main-search-input::placeholder {
 }
 
 .program-box-items-2 {
-  padding: 50px 30px 40px;
+  padding: 50px 90px 40px;
   position: relative;
   z-index: 9;
   max-width: 420px;
   text-align: center;
   margin: 30px auto;
+  min-height: 210px;
 }
 .program-box-items-2 .program-bg {
   position: absolute;
@@ -13561,10 +13516,10 @@ input.main-search-input::placeholder {
   left: 0;
   background-color: var(--theme2);
   transition: all 500ms ease;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 288"><path fill-rule="evenodd" clip-rule="evenodd" d="M131.352 0.968405C166.359 0.739595 212.216 -6.12903 237.965 20.2925C264.719 47.745 268.813 92.0436 269.889 132.547C270.998 174.303 264.054 235.303 237.965 265.31C211.488 295.761 169.371 285.444 131.352 287.293C91.3384 289.24 47.0661 289.453 20.2754 256.287C-5.7936 224.014 -0.425215 175.827 2.64371 132.547C5.39126 93.7981 -4.50211 53.0434 20.2754 25.6771C44.9629 -1.5898 96.5877 1.19563 131.352 0.968405Z" /></svg>');
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 253.125 270"><path fill-rule="evenodd" clip-rule="evenodd" transform="scale(0.9375)" d="M131.352 0.968405C166.359 0.739595 212.216 -6.12903 237.965 20.2925C264.719 47.745 268.813 92.0436 269.889 132.547C270.998 174.303 264.054 235.303 237.965 265.31C211.488 295.761 169.371 285.444 131.352 287.293C91.3384 289.24 47.0661 289.453 20.2754 256.287C-5.7936 224.014 -0.425215 175.827 2.64371 132.547C5.39126 93.7981 -4.50211 53.0434 20.2754 25.6771C44.9629 -1.5898 96.5877 1.19563 131.352 0.968405Z" /></svg>');
   mask-repeat: no-repeat;
   mask-position: center center;
-  mask-size: cover;
+  mask-size: contain;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -14501,7 +14456,6 @@ input.main-search-input::placeholder {
   background: rgba(3, 166, 166, 0.1);
   border-radius: 10px;
   font-weight: 600;
-  text-transform: capitalize;
   padding: 8px 10px;
   line-height: 1;
   margin-top: 15px;
@@ -14782,7 +14736,6 @@ input.main-search-input::placeholder {
 .activities-wrapper-items5 .content h3 {
   font-size: 30px;
   line-height: 1;
-  text-transform: capitalize;
 }
 @media (max-width: 1399px) {
   .activities-wrapper-items5 .content h3 {
@@ -15245,7 +15198,6 @@ input.main-search-input::placeholder {
   display: inline-block;
   background: rgba(3, 166, 166, 0.1);
   border-radius: 10px;
-  text-transform: capitalize;
   padding: 8px 12px;
   line-height: 1;
   margin-top: 20px;
@@ -15311,7 +15263,6 @@ input.main-search-input::placeholder {
 .program-bottom-area-6 .title {
   font-size: 20px;
   font-weight: 700;
-  text-transform: capitalize;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -15435,7 +15386,6 @@ input.main-search-input::placeholder {
   }
 }
 .extra-activities-box-6 .content .title {
-  text-transform: capitalize;
   font-size: 30px;
   font-weight: 700;
   margin-top: 15px;
@@ -15679,13 +15629,13 @@ input.main-search-input::placeholder {
   }
 }
 .section-title span {
-  color: var(--theme);
+  color: color-mix(in srgb, var(--theme) 80%, black);
   margin-bottom: 10px;
   display: inline-block;
   font-weight: 400;
   text-transform: none;
   font-size: 20px;
-  font-family: "Pangolin";
+  font-family: "Quicksand";
 }
 .section-title.style-2 span {
   color: var(--theme3);
@@ -15750,16 +15700,16 @@ input.main-search-input::placeholder {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 @media (max-width: 1199px) {
   .section-padding {
-    padding: 100px 0;
+    padding: 35px 0;
   }
 }
 @media (max-width: 991px) {
   .section-padding {
-    padding: 80px 0;
+    padding: 20px 0;
   }
 }
 
@@ -16049,6 +15999,7 @@ input.main-search-input::placeholder {
   text-align: center;
   position: relative;
   z-index: 9;
+  min-height: 566px;
 }
 .team-box-items .bg-shape-1 {
   position: absolute;
@@ -16073,7 +16024,7 @@ input.main-search-input::placeholder {
 }
 .team-box-items .team-image {
   margin: 0 auto;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294 294"> <path fill-rule="evenodd" clip-rule="evenodd" d="M147.403 0.00569915C182.119 0.435189 209.656 26.2366 235.076 51.2011C261.845 77.4906 291.257 105.251 293.775 143.756C296.413 184.105 275.546 221.843 248.076 250.036C221.009 277.816 185.15 293.448 147.403 293.984C109.12 294.528 71.5048 281.034 43.9843 252.934C16.0177 224.38 -2.47629 184.728 0.269486 143.756C2.87462 104.884 30.5587 75.4755 57.651 49.0061C83.3487 23.8993 112.392 -0.427445 147.403 0.00569915Z" /></svg>');
+  mask: url('/assets/img/team/radius-shape.svg');
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: cover;
@@ -16837,7 +16788,6 @@ input.main-search-input::placeholder {
   left: 0;
 }
 .team-section-6 .link-btn {
-  text-transform: capitalize;
   font-size: 16px;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
@@ -17485,7 +17435,6 @@ input.main-search-input::placeholder {
   font-size: 16px;
   font-weight: 600;
   max-width: 230px;
-  text-transform: capitalize;
   font-style: italic;
   margin: 0 auto;
   color: var(--header);
@@ -17615,7 +17564,6 @@ input.main-search-input::placeholder {
   padding: 0 30px;
 }
 .testimonial-box-items-7 .text {
-  text-transform: capitalize;
   color: #5C707E;
   font-style: italic;
   font-weight: 600;
@@ -17871,6 +17819,10 @@ input.main-search-input::placeholder {
   margin-bottom: 14px;
 }
 
+.home-groups-teaser {
+  margin-bottom: 20px;
+}
+
 .home-groups-teaser .program-box-items-2 {
   height: 100%;
 }
@@ -17885,9 +17837,10 @@ input.main-search-input::placeholder {
   border-radius: 22px;
   padding: 20px 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
   align-items: center;
+  text-align: center;
 }
 
 .home-availability-strip .availability-wrap .theme-btn {

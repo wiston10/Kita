@@ -435,7 +435,7 @@ function escapedValue(string $value): string
             data-component="assets/Component/subpage-hero.html"
             data-prop-eyebrow="Jetzt intern anmelden"
             data-prop-title="Anmelden"
-            data-prop-description="Fuellen Sie das Formular aus. Wir melden uns schnellstmoeglich bei Ihnen.">
+            data-prop-description="Füllen Sie das Formular aus. Wir melden uns schnellstmöglich bei Ihnen.">
         </div>
 
         <section class="contact-section section-padding" id="anmelden">
@@ -452,7 +452,7 @@ function escapedValue(string $value): string
                             <div class="contact-content">
                                 <div class="section-title">
                                     <span class="text-white wow fadeInUp">Anmeldung senden</span>
-                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">Formular fuer Babys und Kinder</h2>
+                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">Formular für Babys und Kinder</h2>
                                 </div>
 
                                 <?php if ($errors): ?>
@@ -646,7 +646,7 @@ function escapedValue(string $value): string
                         </div>
                         <div class="col-lg-5">
                             <div class="contact-image wow fadeInUp" data-wow-delay=".4s">
-                                <img src="assets/img/kita200.jpg" alt="contact-img">
+                                <img src="assets/img/kita-84h.jpg" alt="contact-img">
                                 <div class="cricle-shape">
                                     <img src="assets/img/circle-2.png" alt="shape-img">
                                 </div>
